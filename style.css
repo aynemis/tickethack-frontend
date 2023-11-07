@@ -41,6 +41,7 @@ nav ul li a {
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    background-color: rgb(236, 238, 241);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -58,6 +59,7 @@ nav ul li a {
     margin-top: 50px;
     margin-right: 80px;
 }
+
 #box {
     display: flex;
     justify-content: space-around;
@@ -91,4 +93,39 @@ nav ul li a {
 }
 h1{
     padding-bottom: 10px;
+}
+
+#white-box{
+    background-color: white;
+    margin-top: auto;
+    width: 70%;
+    height: 250px;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#blue-box{
+    background-color: rgb(2, 2, 68);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: auto;
+    width: 70%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#purchase-btn{
+    margin-right: 100px;
+}
+
+#total{
+    color: white;
+    margin-left: 100px;
 }
