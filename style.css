@@ -41,12 +41,12 @@ nav ul li a {
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    background-image:url(/images/background.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
 }
+
 #reservation  {
     display: flex;
     flex-direction: column;
