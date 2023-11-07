@@ -1,6 +1,6 @@
 document.querySelector('#search-button').addEventListener('click', function(){
     fetch('http//localhost:3000/trip',{
-        method: 'POST',
+        method: 'GET',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
             departure: document.querySelector('#departure').value,
