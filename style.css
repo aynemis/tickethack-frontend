@@ -131,13 +131,17 @@ h1{
     background-color: white;
     margin-top: auto;
     width: 70%;
-    height: 250px;
+    height: 30%;
     display:flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+#title{
+    margin-bottom: 100px;
 }
 
 #blue-box{
@@ -155,6 +159,12 @@ h1{
 
 #purchase-btn{
     margin-right: 100px;
+    color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    background-color:rgb(91, 172, 131);
 }
 
 #total{
@@ -169,4 +179,20 @@ h1{
 }
 #text-logo {
     padding-top: 30px;
+}
+#bookings-container{
+    background-color: white;
+    margin: auto;
+    width: 70%;
+    height: 30%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#footer{
+    border-top: solid 2px grey;
+    padding-top:30px;
 }
