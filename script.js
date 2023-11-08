@@ -23,7 +23,7 @@ document.querySelector('#search-button').addEventListener('click', function(){
             <div> <p>${time}</p> </div>
             <div> <p>${trips[i].price}€</p> </div>
             <div> <p>Departure in ... hours</p> </div>
-            <div> <button class="book-btn">Book</button></div>
+            <div> <button id="${trips[i]._id}" class="book-btn">Book</button></div>
             </div>`
         }
     }else if(data.result === false){
@@ -40,13 +40,23 @@ document.querySelector('#search-button').addEventListener('click', function(){
 function Book (){
     let bookButtons = document.querySelectorAll(".book-btn");
     for (let i=0 ; i<bookButtons.length ; i++){
-        let journey = bookButtons[i].parentNode.parentNode
-        bookButtons[i].addEventListener('click', function(){
-            
+        bookButtons[i].addEventListener('click',function (){
+            fetch('http://localhost:3000/selectedtrips',{
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    trip: this.id,
+                    isPaid: false,
+            })
         })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+        })
+    })
     }
-    
 }
+
 
 
 seeTrips();
