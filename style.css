@@ -194,7 +194,7 @@ h1{
     background-color: white;
     margin: auto;
     width: 70%;
-    height: 30%;
+    height: fit-content;
     display:flex;
     flex-direction: column;
     justify-content: space-around;
@@ -205,6 +205,7 @@ h1{
 #footer{
     border-top: solid 2px grey;
     padding-top:30px;
+    padding-bottom: 30px;
 }
 
 .journey{
