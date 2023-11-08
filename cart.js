@@ -1,3 +1,5 @@
+const { totalPrice } = require('../modules/totalPrice');
+
 fetch("http://localhost:3000/selectedtrips/cart")
 .then(response => response.json())
 .then(data => {
