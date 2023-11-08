@@ -95,6 +95,12 @@ nav ul li a {
     margin: 0px auto;
     padding-left:10px;
 }
+
+hr{
+    width: 80%;
+    margin: auto;
+}
+
 #search-button {
     
     color: #f1f1f1;
@@ -105,9 +111,7 @@ nav ul li a {
     background-color:rgb(91, 172, 131); ;
     margin-top: 30px;
 }
-#departure {
-    border-bottom: 1px solid #000;
-}
+
 #visualisation {
     display: flex;
     flex-direction: column;
