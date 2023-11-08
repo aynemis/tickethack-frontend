@@ -22,7 +22,7 @@ document.querySelector('#search-button').addEventListener('click', function(){
             <div> <p>${trips[i].departure}>${trips[i].arrival}</p> </div>
             <div> <p>${time}</p> </div>
             <div> <p>${trips[i].price}€</p> </div>
-            <div> <p>Departure in ... hours</p> </div>
+            <div> <p>Departure in ${moment(trips[i].date).diff(moment(now),'hours')} hours</p> </div>
             <div> <button id="${trips[i]._id}" class="book-btn">Book</button></div>
             </div>`
         }
