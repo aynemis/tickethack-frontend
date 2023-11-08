@@ -1,3 +1,4 @@
+function seeTrips (){
 document.querySelector('#search-button').addEventListener('click', function(){
     fetch('http://localhost:3000/trip',{
         method: 'POST',
@@ -10,7 +11,6 @@ document.querySelector('#search-button').addEventListener('click', function(){
 })
 .then(response => response.json())
 .then(data => {
-    console.log(data)
     if (data.result) {
         document.querySelector('#visualisation').innerHTML =''
         let trips = data.trips
@@ -30,7 +30,23 @@ document.querySelector('#search-button').addEventListener('click', function(){
         document.querySelector('#logo').src = '/Frontend/images/notfound.png'
         document.querySelector('#text-logo').textContent = 'No trip found.'
     }
+    Book ()
+})
 
 })
-})
-// commentaire
+
+}
+
+function Book (){
+    let bookButtons = document.querySelectorAll(".book-btn");
+    for (let i=0 ; i<bookButtons.length ; i++){
+        let journey = bookButtons[i].parentNode.parentNode
+        bookButtons[i].addEventListener('click', function(){
+            
+        })
+    }
+    
+}
+
+
+seeTrips();
