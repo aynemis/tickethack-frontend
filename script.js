@@ -1,6 +1,6 @@
 function seeTrips (){
 document.querySelector('#search-button').addEventListener('click', function(){
-    fetch('http://localhost:3000/trip',{
+    fetch('https://tickethack-backend-neon.vercel.app/trip',{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -27,7 +27,7 @@ document.querySelector('#search-button').addEventListener('click', function(){
             </div>`
         }
     }else if(data.result === false){
-        document.querySelector('#logo').src = '/Frontend/images/notfound.png'
+        document.querySelector('#logo').src = '/images/notfound.png'
         document.querySelector('#text-logo').textContent = 'No trip found.'
     }
     Book ()
@@ -41,7 +41,7 @@ function Book (){
     let bookButtons = document.querySelectorAll(".book-btn");
     for (let i=0 ; i<bookButtons.length ; i++){
         bookButtons[i].addEventListener('click',function (){
-            fetch('http://localhost:3000/selectedtrips',{
+            fetch('https://tickethack-backend-neon.vercel.app/selectedtrips',{
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({

@@ -12,7 +12,7 @@ function totalPrice () {
   }
 
 function getTrips(){  
-fetch("http://localhost:3000/selectedtrips/cart")
+fetch("https://tickethack-backend-neon.vercel.app/selectedtrips/cart")
 .then(response => response.json())
 .then(data => {
     let trips = data.trips;
@@ -43,13 +43,13 @@ function purchase (){
 document.querySelector("#purchase-btn").addEventListener("click", function(){
 
     if(document.querySelectorAll(".journey-cart").length>0){
-        fetch("http://localhost:3000/selectedtrips/bookings",{
+        fetch("https://tickethack-backend-neon.vercel.app/selectedtrips/bookings",{
             method: 'PUT',
             headers: {'Content-Type': 'application/json'}
         })
         .then(()=> {
             console.log("Purchase OK")
-            window.location.assign("http://127.0.0.1:5500/Frontend/booking.html")
+            window.location.assign("https://tickethack-backend-neon.vercel.app/Frontend/booking.html")
         })
     }else{
         document.querySelector("#cart").innerHTML=`
@@ -62,7 +62,7 @@ function deleteTrip (){
    const deleteButton = document.querySelectorAll(".delete-btn")
    for(let i = 0; i < deleteButton.length; i++){
     deleteButton[i].addEventListener("click", function(){
-            fetch("http://localhost:3000/selectedtrips/cart",{
+            fetch("https://tickethack-backend-neon.vercel.app/selectedtrips/cart",{
                 method: 'DELETE',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({id:this.id})
