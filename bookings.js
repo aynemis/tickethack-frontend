@@ -10,7 +10,7 @@ fetch("https://tickethack-backend-neon.vercel.app/selectedtrips/booking")
             <p>${bookings[i].trip.departure}>${bookings[i].trip.arrival}</p> 
             <p>${moment(bookings[i].trip.date).format("hh:mm")}</p> 
             <p>${bookings[i].trip.price}€</p> 
-            <p>Departure in ... hours</p>
+            <p>Departure in ${moment(trips[i].date).diff(moment(),'hours')} hours</p>
         </div>
         `
     }
