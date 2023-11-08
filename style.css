@@ -180,13 +180,16 @@ h1{
     color: white;
     margin-left: 100px;
 }
-
+#logo {
+    height: 150px;
+}
 
 #text-logo {
     width: 100%;
     border-top: 2px solid rgb(91, 172, 131);
     padding-top: 10px;
     padding-bottom: 30px;
+    
 }
 
 #bookings-container{
