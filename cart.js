@@ -1,5 +1,17 @@
-const { totalPrice } = require('../modules/totalPrice');
+function totalPrice () {
+    let total = 0;
+    let prices = document.querySelectorAll(".price")
 
+    for (let i = 0; i < prices.length; i++) {
+      
+      total += Number(prices[i].textContent)
+      
+    }
+    
+    return total;
+  }
+
+function getTrips(){  
 fetch("http://localhost:3000/selectedtrips/cart")
 .then(response => response.json())
 .then(data => {
@@ -11,12 +23,11 @@ fetch("http://localhost:3000/selectedtrips/cart")
         <div class="journey-cart"> 
             <p>${trips[i].trip.departure}>${trips[i].trip.arrival}</p> 
             <p>${moment(trips[i].trip.date).format("hh:mm")}</p> 
-            <p>${trips[i].trip.price}€</p> 
+            <p><span class="price">${trips[i].trip.price}</span>€</p> 
             <button id="${trips[i]._id}" class="delete-btn">X</button>
         </div>
         `
-        prixTotal = prixTotal + trips[i].trip.price
-        document.querySelector("#prix-total").textContent = prixTotal
+        document.querySelector("#prix-total").textContent = totalPrice()
     }
 }else{
     document.querySelector("#cart").innerHTML+=`
@@ -26,6 +37,7 @@ fetch("http://localhost:3000/selectedtrips/cart")
     purchase();
     deleteTrip();
 })
+}
 
 function purchase (){
 document.querySelector("#purchase-btn").addEventListener("click", function(){
@@ -63,8 +75,10 @@ function deleteTrip (){
                     })
                 }
                 console.log("deletedList")
-                
+                document.querySelector("#prix-total").textContent = totalPrice()
             })
         
   })}
 }
+
+getTrips()
