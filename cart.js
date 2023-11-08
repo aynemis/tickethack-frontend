@@ -45,10 +45,13 @@ document.querySelector("#purchase-btn").addEventListener("click", function(){
 }
 
 function deleteTrip (){
-    document.querySelectorAll(".delete-btn").addEventListener("click", function(){
+   const deleteButton = document.querySelectorAll(".delete-btn")
+   for(let i = 0; i < deleteButton.length; i++){
+    deleteButton[i].addEventListener("click", function(){
             fetch("http://localhost:3000/selectedtrips/cart",{
                 method: 'DELETE',
-                headers: {'Content-Type': 'application/json'}
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({id:this.id})
             })
             .then(()=> {
                 const deletedList = document.querySelectorAll(".delete-btn");
@@ -60,5 +63,6 @@ function deleteTrip (){
                 console.log("deletedList")
                 
             })
-  })
+        
+  })}
 }
