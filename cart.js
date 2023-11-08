@@ -49,7 +49,7 @@ document.querySelector("#purchase-btn").addEventListener("click", function(){
         })
         .then(()=> {
             console.log("Purchase OK")
-            window.location.assign("https://tickethack-backend-neon.vercel.app/booking.html")
+            window.location.assign("https://tickethack-frontend-pi.vercel.app/booking.html")
         })
     }else{
         document.querySelector("#cart").innerHTML=`
