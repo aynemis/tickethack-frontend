@@ -18,7 +18,8 @@ fetch("http://localhost:3000/selectedtrips/cart")
         <p>No journeys in your cart!<p>`
 }
 
-    purchase()
+    purchase();
+    deleteTrip();
 })
 
 function purchase (){
@@ -40,3 +41,21 @@ document.querySelector("#purchase-btn").addEventListener("click", function(){
 })
 }
 
+function deleteTrip (){
+    document.querySelectorAll(".delete-btn").addEventListener("click", function(){
+            fetch("http://localhost:3000/selectedtrips/cart",{
+                method: 'DELETE',
+                headers: {'Content-Type': 'application/json'}
+            })
+            .then(()=> {
+                const deletedList = document.querySelectorAll(".delete-btn");
+                for( let i = 0; i < deletedList.length; i++) {
+                    deletedList[i].addEventListener("click", function(){
+                        this.parentNode.remove()
+                    })
+                }
+                console.log("deletedList")
+                
+            })
+  })
+}
