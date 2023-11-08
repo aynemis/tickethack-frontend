@@ -3,6 +3,7 @@ fetch("http://localhost:3000/selectedtrips/cart")
 .then(data => {
     let trips = data.trips;
     if(trips.length>0){
+        let prixTotal= 0;
     for(let i=0; i<trips.length ; i++){
         document.querySelector("#cart").innerHTML+=`
         <div class="journey-cart"> 
@@ -12,6 +13,8 @@ fetch("http://localhost:3000/selectedtrips/cart")
             <button id="${trips[i]._id}" class="delete-btn">X</button>
         </div>
         `
+        prixTotal = prixTotal + trips[i].trip.price
+        document.querySelector("#prix-total").textContent = prixTotal
     }
 }else{
     document.querySelector("#cart").innerHTML+=`
